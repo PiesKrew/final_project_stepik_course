@@ -12,8 +12,9 @@ class LoginPageLocators:
 
 
 class ProductPageLocators:
-    ADD_BUTTON = (By.CSS_SELECTOR, '#add_to_basket_form [type="submit"]')
-    MESSAGE_ABOUT_ADDING = (By.CSS_SELECTOR, "div.alertinner")
-    PRODUCT_NAME = (By.CSS_SELECTOR, "div.product_main h1 strong")
-    MESSAGE_BASKET_TOTAL = (By.CSS_SELECTOR, ".alert-info .alertinner strong")
-    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
+    BASKET_BUTTON_LINK = (By.CSS_SELECTOR, "form#add_to_basket_form > button.btn-add-to-basket")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, "h1 + .price_color")
+    BASKET_PRICE = (By.CSS_SELECTOR, "div.alertinner > p > strong ")
+    PRODUCT_NAME_PAGE = (By.CSS_SELECTOR, "div.row h1")
+    PRODUCT_NAME_BASKET = (By.CSS_SELECTOR, "div.alertinner > strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages div:first-child")

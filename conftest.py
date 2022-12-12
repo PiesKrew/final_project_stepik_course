@@ -17,7 +17,7 @@ def browser(request):
     if browser_name == "chrome":
         options = Options()
         options.add_experimental_option('prefs', {'intl.accept_languages': chosen_language})
-        browser = webdriver.Chrome(options=options)
+        browser = webdriver.Chrome(executable_path="C:\chromedriver\chromedriver.exe")
 
     elif browser_name == "firefox":
         fp = webdriver.FirefoxProfile()
