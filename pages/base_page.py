@@ -16,7 +16,7 @@ class BasePage:
         self.browser.get(self.url)
 
     def go_to_login_page(self):
-        self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID).click()
+        self.browser.find_element(*BasePageLocators.LOGIN_LINK).click()
 
     def go_to_basket_page(self):
         self.browser.find_element(*BasePageLocators.BASKET_BUTTON).click()

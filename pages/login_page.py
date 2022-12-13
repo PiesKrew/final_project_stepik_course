@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators, FixturePageLocators
+import pytest
 import time
 
 
@@ -10,16 +11,20 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        assert "login" in self.browser.current_url, "No 'login' in url"
-        assert True
+        current_url = self.browser.current_url
+        assert "login" in current_url, "There's not the substring"
 
     def should_be_login_form(self):
-        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Login form is not presented"
-        assert True
+        try:
+            self.browser.find_element(*LoginPageLocators.LOGIN_FORM)
+        except():
+            assert self.browser.is_element_present(*LoginPageLocators.LOGIN_FORM), "There's not login form"
 
     def should_be_register_form(self):
-        assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Register form is not presented"
-        assert True
+        try:
+            self.browser.find_element(*LoginPageLocators.REGISTER_FORM)
+        except():
+            assert self.browser.is_element_present(*LoginPageLocators.REGISTER_FORM), "There's not register form"
 
     def should_be_user_login_message(self):
         try:

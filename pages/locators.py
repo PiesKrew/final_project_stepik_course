@@ -11,6 +11,7 @@ class LoginPageLocators:
 
 class ProductPageLocators:
     BASKET_BUTTON_LINK = (By.CSS_SELECTOR, "#add_to_basket_form")
+    PRICE = (By.XPATH, "//*[@id=\"content_inner\"]/article/div[1]/div[2]/p[1]")
     BASKET_PRICE = (By.CSS_SELECTOR, "div.alertinner > p > strong ")
     PRODUCT_PRICE = (By.CSS_SELECTOR, "h1 + .price_color")
     PRODUCT_NAME = (By.CSS_SELECTOR, "div.product_main h1 strong")
@@ -23,7 +24,6 @@ class ProductPageLocators:
 
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_BUTTON = (By.XPATH, "//*[@id=\"default\"]/header/div[1]/div/div[2]/span/a")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 

@@ -18,6 +18,11 @@ class ProductPage(BasePage):
         assert product_name_basket == product_name_page, \
             f"Product names in page and basket are not the same! {product_name_page} != {product_name_basket}"
 
+    def should_see_price(self):
+        price = self.browser.find_element(*ProductPageLocators.PRICE)
+        basket_price = self.browser.find_element(*ProductPageLocators.BASKET_PRICE)
+        assert price.text == basket_price.text, "There's wrong price or there's not price at all."
+
     def should_be_basket_and_product_same_price(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text[1:]
         basket_price = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text[1:]
